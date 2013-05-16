@@ -121,3 +121,6 @@ autocmd FileType php nmap <F5> <ESC>:!clear && php <C-R>%<CR>
 
 " Use <F11> to toggle between 'paste' and 'nopaste'
 set pastetoggle=<F11>
+
+" php folding
+let php_folding = 1
