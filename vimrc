@@ -2,11 +2,10 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
-set history=50                               " Keep 50 lines of command line history
+set history=1000                             " Keep 1000 lines of command line history
 set ruler                                    " Show the cursor position all the time
 set autoread                                 " Auto read when file is changed from outside
 filetype on                                  " Enable filetype detection
-filetype indent on                           " Enable filetype-specific indenting
 filetype plugin on                           " Enable filetype-specific plugins
 autocmd! bufwritepost .vimrc source ~/.vimrc " Auto reload vimrc when editing it
 
@@ -31,10 +30,6 @@ set termencoding=utf-8
 set fileencoding=utf-8
 set fileencodings=ucs-bom,utf-8,gb2312,big5,latin1
 set ambiwidth=double
-
-" No backup
-set nobackup
-set nowritebackup
 
 " Switch tab to four spaces
 set expandtab
@@ -73,29 +68,45 @@ let g:mapleader=","
 nmap <leader>/ :nohl<CR>
 
 " Enable omni completion. (Ctrl-X Ctrl-O)
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType c set omnifunc=ccomplete#Complete
-autocmd FileType java set omnifunc=javacomplete#Complete
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+" autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+" autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+" autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+" autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+" autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+" autocmd FileType c set omnifunc=ccomplete#Complete
+" autocmd FileType java set omnifunc=javacomplete#Complete
+" autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
 " Use syntax complete if nothing else available
-if has("autocmd") && exists("+omnifunc")
-    autocmd Filetype *
-              \ if &omnifunc == "" |
-              \     setlocal omnifunc=syntaxcomplete#Complete |
-              \ endif
-endif
+" if has("autocmd") && exists("+omnifunc")
+"     autocmd Filetype *
+"               \ if &omnifunc == "" |
+"               \     setlocal omnifunc=syntaxcomplete#Complete |
+"               \ endif
+" endif
 
-set cot-=preview " Disable doc preview in omnicomplete
+" set cot-=preview " Disable doc preview in omnicomplete
 
 " --- SuperTab
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabCompletionContexts = ['s:ContextText', 's:ContextDiscover']
-let g:SuperTabContextDiscoverDiscovery = ["&completefunc:<c-x><c-u>", "&omnifunc:<c-x><c-o>"]
+" let g:SuperTabContextDiscoverDiscovery = ["&completefunc:<c-x><c-u>", "&omnifunc:<c-x><c-o>"]
+
+" DoxygenToolkit
+let g:load_doxygen_syntax=1
+let g:DoxygenToolkit_paramTag_pre="@param "
+let g:DoxygenToolkit_returnTag="@return "
+let g:DoxygenToolkit_authorName="liudezhi liudezhiabc@126.com"
+let g:DoxygenToolkit_briefTag_funcName="yes"
+let g:DoxygenToolkit_briefTag_className="yes"
+let g:DoxygenToolkit_briefTag_structName="yes"
+let g:DoxygenToolkit_briefTag_enumName="yes"
+let g:DoxygenToolkit_briefTag_namespaceName="yes"
+let s:licenseTag="Copyright(C)\<enter>"
+let s:licenseTag=s:licenseTag . "For free\<enter>"
+let s:licenseTag=s:licenseTag . "All right reserved\<enter>"
+map <leader>da :DoxAuthor<CR>
+map <leader>df :Dox<CR>
 
 " NERDTree
 " :Bookmark [name] - bookmark any directory as name
