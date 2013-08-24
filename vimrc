@@ -89,14 +89,14 @@ nmap <leader>/ :nohl<CR>
 
 " --- SuperTab
 let g:SuperTabDefaultCompletionType = "context"
-let g:SuperTabCompletionContexts = ['s:ContextText', 's:ContextDiscover']
+" let g:SuperTabCompletionContexts = ['s:ContextText', 's:ContextDiscover']
 " let g:SuperTabContextDiscoverDiscovery = ["&completefunc:<c-x><c-u>", "&omnifunc:<c-x><c-o>"]
 
 " DoxygenToolkit
 let g:load_doxygen_syntax=1
 let g:DoxygenToolkit_paramTag_pre="@param "
 let g:DoxygenToolkit_returnTag="@return "
-let g:DoxygenToolkit_authorName="liudezhi liudezhiabc@126.com"
+let g:DoxygenToolkit_authorName="bryce liudezhiabc@126.com"
 let g:DoxygenToolkit_briefTag_funcName="yes"
 let g:DoxygenToolkit_briefTag_className="yes"
 let g:DoxygenToolkit_briefTag_structName="yes"
