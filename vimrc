@@ -135,3 +135,10 @@ set pastetoggle=<F11>
 
 " php folding
 let php_folding = 1
+
+" php autocomplete function name
+function AddPHPFunclist()
+    set dictionary-=~/.vim/funclist/php_funclist.txt dictionary+=~/.vim/funclist/php_funclist.txt
+    set complete-=k complete+=k
+endfunction
+au FileType php call AddPHPFunclist()
