@@ -88,7 +88,7 @@ nmap <leader>/ :nohl<CR>
 " set cot-=preview " Disable doc preview in omnicomplete
 
 " --- SuperTab
-let g:SuperTabDefaultCompletionType = "context"
+" let g:SuperTabDefaultCompletionType = "context"
 " let g:SuperTabCompletionContexts = ['s:ContextText', 's:ContextDiscover']
 " let g:SuperTabContextDiscoverDiscovery = ["&completefunc:<c-x><c-u>", "&omnifunc:<c-x><c-o>"]
 
