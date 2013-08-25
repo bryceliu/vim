@@ -96,7 +96,7 @@ nmap <leader>/ :nohl<CR>
 let g:load_doxygen_syntax=1
 let g:DoxygenToolkit_paramTag_pre="@param "
 let g:DoxygenToolkit_returnTag="@return "
-let g:DoxygenToolkit_authorName="bryce liudezhiabc@126.com"
+let g:DoxygenToolkit_authorName="hellofreedom liudezhiabc@gmail.com"
 let g:DoxygenToolkit_briefTag_funcName="yes"
 let g:DoxygenToolkit_briefTag_className="yes"
 let g:DoxygenToolkit_briefTag_structName="yes"
