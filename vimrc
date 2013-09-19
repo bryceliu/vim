@@ -170,3 +170,6 @@ let g:rbpt_loadcmd_toggle = 0
 
 " MarksBrowser
 map <leader>mb :MarksBrowser<CR>
+
+" rescan the buffer from the start for highlight
+autocmd BufEnter * :syntax sync fromstart
