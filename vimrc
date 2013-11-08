@@ -1,6 +1,7 @@
 " For pathogen.vim: auto load all plugins in .vim/bundle
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+" call pathogen#runtime_append_all_bundles()
+" call pathogen#helptags()
+execute pathogen#infect()
 
 set history=1000                             " Keep 1000 lines of command line history
 set ruler                                    " Show the cursor position all the time
