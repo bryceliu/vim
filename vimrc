@@ -129,7 +129,10 @@ imap <F4> <ESC>:w<CR>
 nmap <F4> :w<CR>
 
 " Use <F5> to execute the current php script
-autocmd FileType php nmap <F5> <ESC>:!clear && php <C-R>%<CR>
+autocmd FileType php imap <F5> <ESC>:w<CR> :!clear && php %<CR>
+autocmd FileType php nmap <F5> :w<CR> :!clear && php %<CR>
+autocmd FileType c imap <F5> <ESC>:w<CR> :!clear && gcc % -o %:t:r && ./%:t:r<CR>
+autocmd FileType c nmap <F5> :w<CR> :!clear && gcc % -o %:t:r && ./%:t:r<CR>
 
 " Use <F11> to toggle between 'paste' and 'nopaste'
 set pastetoggle=<F11>
