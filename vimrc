@@ -18,8 +18,10 @@ syntax enable
 syntax on
 
 " Color theme
-color desert
-colors desert
+" color desert
+" colors desert
+set background=dark
+colorscheme solarized
 
 " Highlight search
 set hlsearch
@@ -141,7 +143,7 @@ set pastetoggle=<F11>
 let php_folding = 1
 
 " php autocomplete function name
-function AddPHPFunclist()
+function! AddPHPFunclist()
     set dictionary-=~/.vim/funclist/php_funclist.txt dictionary+=~/.vim/funclist/php_funclist.txt
     set complete-=k complete+=k
 endfunction
