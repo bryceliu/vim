@@ -20,6 +20,7 @@ syntax on
 " Color theme
 " color desert
 " colors desert
+set t_Co=256
 set background=dark
 colorscheme solarized
 
@@ -135,9 +136,11 @@ autocmd FileType php imap <F5> <ESC>:w<CR> :!clear && php %<CR>
 autocmd FileType php nmap <F5> :w<CR> :!clear && php %<CR>
 autocmd FileType c imap <F5> <ESC>:w<CR> :!clear && gcc % -o %:t:r && ./%:t:r<CR>
 autocmd FileType c nmap <F5> :w<CR> :!clear && gcc % -o %:t:r && ./%:t:r<CR>
+autocmd FileType cpp imap <F5> <ESC>:w<CR> :!clear && g++ % -o %:t:r && ./%:t:r<CR>
+autocmd FileType cpp nmap <F5> :w<CR> :!clear && g++ % -o %:t:r && ./%:t:r<CR>
 
 " Use <F11> to toggle between 'paste' and 'nopaste'
-set pastetoggle=<F11>
+set pastetoggle=<F8>
 
 " php folding
 let php_folding = 1
@@ -179,3 +182,6 @@ map <leader>mb :MarksBrowser<CR>
 
 " rescan the buffer from the start for highlight
 autocmd BufEnter * :syntax sync fromstart
+
+" markdown
+let g:vim_markdown_folding_disabled=1
