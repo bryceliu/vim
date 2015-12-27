@@ -121,6 +121,7 @@ map <leader>df :Dox<CR>
 " cd change the CWD to the selected dir
 " o open & close node
 map <leader>nt :NERDTreeToggle<CR>
+let g:NERDTreeShowHidden=1
 
 " Show bufexplorer
 map <leader>be :BufExplorer<CR>
