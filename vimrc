@@ -3,7 +3,6 @@
 " call pathogen#helptags()
 execute pathogen#infect()
 
-set term=ansi
 set history=1000                             " Keep 1000 lines of command line history
 set ruler                                    " Show the cursor position all the time
 set autoread                                 " Auto read when file is changed from outside
