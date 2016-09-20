@@ -54,6 +54,7 @@ set wildmenu       " Wild char completion menu
 set ignorecase     " Ignore case when searching
 set smartcase      " Ignore case if search pattern is all lowercase, case-sensitive otherwise
 set smarttab       " Insert tabs on the start of a line according to context
+set nofoldenable   " not fold functions
 
 " C/C++ specific settings
 autocmd FileType c,cpp,cc set cindent comments=sr:/*,mb:*,el:*/,:// cino=>s,e0,n0,f0,{0,}0,^-1s,:0,=s,g0,h1s,p2,t0,+2,(2,)20,*30
