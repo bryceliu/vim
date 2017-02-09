@@ -187,3 +187,11 @@ autocmd BufEnter * :syntax sync fromstart
 
 " markdown
 let g:vim_markdown_folding_disabled=1
+
+" Open nerdtree when there is no file
+function! StartUp()
+    if 0 == argc()
+        NERDTree
+    end
+endfunction
+autocmd VimEnter * call StartUp()
