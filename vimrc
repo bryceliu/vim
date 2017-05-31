@@ -197,7 +197,8 @@ endfunction
 autocmd VimEnter * call StartUp()
 
 let g:MarkStackCacheFile = '/tmp/mark_stack_for_vim.txt'
-let g:MarkStackTable = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+let g:MarkStackTable = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
+    \ 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 function! MarkStackPush()
     let marks = []
     if filereadable(g:MarkStackCacheFile)
@@ -219,7 +220,7 @@ function! MarkStackPop()
     if filereadable(g:MarkStackCacheFile)
         let marks = readfile(g:MarkStackCacheFile)
         if len(marks) < 1
-            echohl WarningMsg | echo 'Err: mark stack empty' | echohl None
+            echohl ErrorMsg | echo 'Err: mark stack empty' | echohl None
         else
             execute 'normal! g`' . marks[-1]
             execute 'delmarks ' . marks[-1]
