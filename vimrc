@@ -231,3 +231,11 @@ function! MarkStackPop()
         echohl ErrorMsg | echo 'Err: mark stack empty' | echohl None
     endif
 endfunction
+
+let g:EclimJavaSearchSingleResult = 'edit'
+function! JavaSearchContext()
+    call MarkStackPush()
+    JavaSearchContext
+endfunction
+autocmd FileType java nmap <F3> :call JavaSearchContext()<CR>
+autocmd FileType java nmap <F2> :call MarkStackPop()<CR>
