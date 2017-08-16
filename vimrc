@@ -239,3 +239,8 @@ function! JavaSearchContext()
 endfunction
 autocmd FileType java nmap <F3> :call JavaSearchContext()<CR>
 autocmd FileType java nmap <F2> :call MarkStackPop()<CR>
+
+autocmd FileType php inoremap <leader>u <ESC>:call PhpInsertUse()<CR>
+autocmd FileType php noremap <leader>u :call PhpInsertUse()<CR>
+autocmd FileType php inoremap <leader>s <ESC>:call PhpSortUse()<CR>
+autocmd FileType php noremap <leader>s :call PhpSortUse()<CR>
